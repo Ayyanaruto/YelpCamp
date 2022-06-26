@@ -1,0 +1,60 @@
+<%layout('layout/boilerplate')%>
+
+    <div class="container">
+        <h1 class="text-center">Edit Campgrounds</h1>
+        <div class="col-6 offset-3">
+            <form action="/campgrounds/<%=data._id%>?_method=PUT" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input type="text" name="title" id="title" class="form-control" value="<%= data.title %>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input type="text" name="location" id="location" class="form-control" value="<%= data.location %>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+            </div>
+
+            <div class="input-group mb-3" style="width:fit-content;">
+                <label for="price"><span class="input-group-text">$</span></label>
+                <input type="text" class="form-control" aria-label="price" id="price" name="price" value="<%= data.price %>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text">Description</span>
+                <textarea class="form-control" aria-label="With textarea" name="description" id="description" required><%= data.description %> </textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="image">Choose new Images</label>
+                <input type="file" name="image" id="image" class="form-control" placeholder="URL"  multiple>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+            </div>
+            <div class="mb-3">
+                
+                <%data.images.forEach(function(img,i){%>
+                    <div class="form-check" style="display: inline-block;">
+                        <input class="form-check-input" type="checkbox"name="deleteimg[]" value="<%=img.filename%>" id="img<%=i%> ">
+                        <label class="form-check-label" for="img<%=i%>">
+                          delete
+                        </label>
+                    </div>
+                      
+                <img src="<%=img.url%>" alt="..." class="img-thumbnail rounded float-left" style="max-width:15%">
+                <%}) %> 
+            </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        </div>
+    </div>
+    

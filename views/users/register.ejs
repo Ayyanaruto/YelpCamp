@@ -1,0 +1,58 @@
+
+<%layout('layout/boilerplate')%>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!------ Include the above in your HEAD tag ---------->
+
+        <div class="container d-flex justify-content-center align-items-center mt-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4 mb-3">
+                    <div class="card shadow">
+                        <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+                            alt="" class="card-img-top" />
+                        <div class="card-body">
+                           
+
+                                <form id="login-form" class="form" action="/register" method="post" class="needs-validation" novalidate >
+                                    <h3 class="text-center text-info">Register</h3>
+                                    <div class="form-group">
+                                        <label for="email" class="text-info">Email:</label><br>
+                                        <input type="text" name="email" id="email" class="form-control" required>
+
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                          </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username" class="text-info">Username:</label><br>
+                                        <input type="text" name="username" id="username" class="form-control" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                          </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="text-info">Password:</label><br>
+                                        <input type="text" name="password" id="password" class="form-control" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                          </div>
+                                    </div>
+                                    <div class="form-group m-2 ">
+                                        <input type="submit" class="btn btn-info btn-md btn-block" value="submit" >
+                                    </div>
+                                    <div id="register-link" class="text-right">
+                                        <a href="/login" class="text-info">Login here</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,45 @@
+<%layout('layout/boilerplate')%>
+<div class="container">
+    <h1 class="text-center">New Campgrounds</h1>
+    <div class="col-6 offset-3">
+<form action="/campgrounds" method="post" novalidate class="needs-validation" enctype="multipart/form-data"> 
+        <div class="mb-3">
+            <label class="form-label" for="title">Title</label>
+            <input type="text" name="title" id="title" class="form-control" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="location">Location</label>
+            <input type="text" name="location" id="location" class="form-control" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="image">Image</label>
+            <input type="file" name="image" id="image" class="form-control" placeholder="URL"  multiple>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div>
+        <div class="input-group mb-3" style="width:fit-content;">
+            <label for="price"><span class="input-group-text">$</span></label>
+            <input type="text" class="form-control" aria-label="price" id="price" name="price" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Description</span>
+            <textarea class="form-control" aria-label="With textarea" name="description" id="description" required></textarea>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+    </div>
+    <a class="btn btn-outline-primary" href="/campgrounds" role="">Home</a>
+</div>
